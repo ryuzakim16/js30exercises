@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>The ES6 Clock!</title>
+	<link rel="stylesheet" type="text/css" href="http://js30exercisefiles.test/Exercise_2/src/css/app.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!-- The Analog Clock -->
+		<div class="analog-clock">
+			<div class="outer-frame">
+				<div class="hands-container">
+					<span class="hour-hand"></span>
+					<span class="minute-hand"></span>
+					<span class="seconds-hand"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- The Digital Clock -->
+		<div class="digital-clock">
+			<div class="outer-case">
+				<script id="digital-template" type="text/x-handlebars-template">
+					<span class="hour-label">{{currentHour}}</span>
+					<span class="separator">:</span>
+					<span class="minute-label">{{currentMinute}}</span>
+					<span class="separator">:</span>
+					<span class="seconds-label">{{currentSeconds}}</span>
+				</script>
+			</div>
+		</div>
+
+		<div class="options">
+			<div class="inputs">
+				<form method="POST" id="timeForm">
+					<label for="hour">Hours</label>
+					<input type="number" max="24" min="0" class="input" id="hour" value="" required />
+					<label for="minute">Minutes</label>
+					<input type="number" class="input" max="59" min="0" id="minute" value="" required />
+					<button class="opt-buttons" id="runTime" type="submit">Start Time</button>
+					<button class="opt-buttons" id="stopTime" type="button" disabled>Stop Time</button>
+				</form>
+			</div>
+			<button class="opt-buttons" id="analog" disabled>Select Analog Clock</button>
+			<button class="opt-buttons" id="digital">Select Digital Clock</button>
+		</div>
+	</div>
+
+	<div class="creepy"></div>
+	<script src="http://js30exercisefiles.test/Exercise_2/dist/app.js"></script>
+</body>
+</html>

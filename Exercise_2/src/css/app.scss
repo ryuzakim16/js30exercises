@@ -1,0 +1,82 @@
+/* Clock CSS */
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+body{
+	font-family: 'Orbitron', sans-serif;
+}
+:root{
+	--deg-rotate: rotate(0deg);
+}
+.analog-clock{
+	display: none;
+	
+	.outer-frame{
+		background: url('../images/analog-clock.png') no-repeat center;
+		background-size: contain;
+		display: flex;
+		justify-content: center;
+		margin: 2em 0;
+		
+		.hands-container {
+			position: relative;
+			min-height: 20em;
+			min-width: 20em;
+
+			 span{
+				transform: var(--deg-rotate);
+				background-size: cover;
+				position: absolute;
+				width: 17em;
+				height: 17em;
+				top: 1.3em;
+				left: 1.5em;
+
+				&.hour-hand{
+					background: url('../images/hour-hand.png') no-repeat center;
+				}
+				&.minute-hand{
+					background: url('../images/minute-hand.png') no-repeat center;
+				}
+				&.seconds-hand{
+					background: url('../images/seconds-hand.png') no-repeat center;
+				}
+			}
+		}
+	}
+}
+.digital-clock{
+	display: none;
+
+	.outer-case{
+		background: url('../images/digital-clock.png') no-repeat center;
+		background-size: contain;
+		display: flex;
+		margin: 2em 0;
+		min-height: 10em;
+		align-items: center;
+		justify-content: center;
+		
+		.outer-case span {
+		    display: inline-block;
+		    font-size: 3em;
+		}
+	}
+}
+.creepy{
+	transition: all 3.0s ease;
+	background: rgba(0, 0, 0, 0.3) url('../images/creepy.gif') no-repeat center;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+
+	&.show{
+		visibility: visible;
+		opacity: 1
+		
+	}
+}
